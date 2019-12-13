@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import Button from '../components/Button/Button';
+import Button from '../src/components/Button/Button';
 import { jsx, css } from '@emotion/core';
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
