@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Button from './components/Button/Button';
+import ButtonGroup from './components/ButtonGroup/ButtonGroup';
+import Icon from './components/Icon/Icon';
 
 const App: React.FC = () => {
   return (
@@ -16,7 +18,12 @@ const App: React.FC = () => {
         </a>
       </header>
       <body>
+        <ButtonGroup>
+          <Button>btn1</Button>
+          <Button>btn2</Button>
+        </ButtonGroup>
         <Button>hell</Button>
+        <Icon icon={'heart'} />
       </body>
     </div>
   );
