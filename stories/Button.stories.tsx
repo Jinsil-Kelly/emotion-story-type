@@ -3,6 +3,8 @@ import Button from '../src/components/Button/Button';
 import { jsx, css } from '@emotion/core';
 import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import ButtonGroup from '../src/components/ButtonGroup/ButtonGroup';
+import Icon from '../src/components/Icon/Icon';
 
 export default {
   title: 'components|Button',
@@ -97,6 +99,43 @@ export const customSized = () => {
     </div>
   );
 };
+
+export const withIcon = () => {
+  return (
+    <div>
+      <ButtonGroup>
+        <Button size="small">
+          <Icon icon="heart" /> LIKE
+        </Button>
+        <Button>
+          <Icon icon="heart" /> LIKE
+        </Button>
+        <Button size="big">
+          <Icon icon="heart" /> LIKE
+        </Button>
+      </ButtonGroup>
+    </div>
+  );
+};
+
+export const iconOnly = () => {
+  return (
+    <div>
+      <ButtonGroup>
+        <Button iconOnly size="small">
+          <Icon icon="heart" />
+        </Button>
+        <Button iconOnly>
+          <Icon icon="heart" />
+        </Button>
+        <Button iconOnly size="big">
+          <Icon icon="heart" />
+        </Button>
+      </ButtonGroup>
+    </div>
+  );
+};
+
 export const emoji = () => (
   <Button onClick={action('clicked')}>
     <span role="img" aria-label="so cool">

@@ -19,12 +19,19 @@ const style = css`
   &:disabled {
     cursor: not-allowed;
   }
+  svg {
+    width: 1em;
+    margin-right: 1em;
+  }
 `;
 
 const themes = {
   primary: css`
     background: #20c997;
     color: white;
+    svg {
+      fill: white;
+    }
     &:hover:enabled {
       background: #38d9a9;
     }
@@ -38,6 +45,9 @@ const themes = {
   secondary: css`
     background: #e9ecef;
     color: #343a40;
+    svg {
+      fill: #343a40;
+    }
     &:hover:enabled {
       background: #f1f3f5;
     }
@@ -46,11 +56,17 @@ const themes = {
     }
     &:disabled {
       color: #c6d3e1;
+      svg {
+        fill: #c6d3e1;
+      }
     }
   `,
   tertiary: css`
     background: none;
     color: #20c997;
+    svg {
+      fill: #20c997;
+    }
     &:hover:enabled {
       background: #e6fcf5;
     }
@@ -59,6 +75,9 @@ const themes = {
     }
     &:disabled {
       color: #bcd9d0;
+      svg {
+        fill: #bcd9d0;
+      }
     }
   `,
 };
@@ -81,4 +100,24 @@ const sizes = {
   `,
 };
 
-export { style, themes, sizes };
+const iconOnlyStyle = css`
+  padding: 0;
+  border-radius: 50%;
+  svg {
+    margin: 0;
+  }
+`;
+
+const iconOnlySizes = {
+  small: css`
+    width: 1.75rem;
+  `,
+  medium: css`
+    width: 2.5rem;
+  `,
+  big: css`
+    width: 3rem;
+  `,
+};
+
+export { style, themes, sizes, iconOnlyStyle, iconOnlySizes };

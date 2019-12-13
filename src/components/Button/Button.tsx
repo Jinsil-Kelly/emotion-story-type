@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from '@emotion/core';
-import { sizes, style, themes } from './ButtonStyle';
+import { iconOnlySizes, iconOnlyStyle, sizes, style, themes } from './ButtonStyle';
 
 type ButtonProps = {
   /** Button content */
@@ -16,20 +16,25 @@ type ButtonProps = {
   disabled?: boolean;
   /** Button width */
   width?: string | number;
+  /** Set this to `true` when showing only icons on buttons. */
+  iconOnly?: boolean;
 };
 
 /** The `Button` component is used to trigger any action.  */
-function Button({ width, disabled, theme, size, children, onClick }: ButtonProps) {
-  // const Button = ({ children, onClick }: ButtonProps) => {
+function Button({ iconOnly, width, disabled, theme, size, children, onClick }: ButtonProps) {
   return (
-    <button disabled={disabled} css={[style, themes[theme], sizes[size], { width }]} onClick={onClick}>
+    <button
+      disabled={disabled}
+      css={[style, themes[theme], sizes[size], { width }, iconOnly && [iconOnlyStyle, iconOnlySizes[size]]]}
+      onClick={onClick}
+    >
       {children}
     </button>
   );
 }
 Button.defaultProps = {
   theme: 'primary',
-  size: 'big',
+  size: 'medium',
 };
 
 export default Button;
