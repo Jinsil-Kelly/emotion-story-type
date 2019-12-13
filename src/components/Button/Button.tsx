@@ -21,11 +21,25 @@ type ButtonProps = {
 };
 
 /** The `Button` component is used to trigger any action.  */
-function Button({ iconOnly, width, disabled, theme, size, children, onClick }: ButtonProps) {
+function Button({
+  iconOnly,
+  width,
+  disabled,
+  theme,
+  size,
+  children,
+  onClick,
+}: ButtonProps) {
   return (
     <button
       disabled={disabled}
-      css={[style, themes[theme], sizes[size], { width }, iconOnly && [iconOnlyStyle, iconOnlySizes[size]]]}
+      css={[
+        style,
+        themes[theme],
+        sizes[size],
+        { width },
+        iconOnly && [iconOnlyStyle, iconOnlySizes[size]],
+      ]}
       onClick={onClick}
     >
       {children}

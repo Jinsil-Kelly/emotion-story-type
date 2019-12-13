@@ -22,7 +22,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint --ext .ts --ext .tsx ."
+    "lint": "eslint --ext .ts --ext .tsx .",
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|yml|yaml|css|md|vue)\""
   },
   "husky": {
     "hooks": {
@@ -32,6 +33,10 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --fix",
+      "git add"
+    ],
+    "*.+(json|css|md)": [
+      "prettier --write",
       "git add"
     ]
   },

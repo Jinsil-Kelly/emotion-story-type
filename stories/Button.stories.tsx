@@ -20,7 +20,13 @@ export const button = () => {
   const width = text('width', '');
 
   return (
-    <Button size={size} theme={theme} disabled={disabled} width={width} onClick={action('onClick')}>
+    <Button
+      size={size}
+      theme={theme}
+      disabled={disabled}
+      width={width}
+      onClick={action('onClick')}
+    >
       {label}
     </Button>
   );

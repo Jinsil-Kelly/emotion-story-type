@@ -12,16 +12,16 @@ module.exports = ({ config, mode }) => {
               {
                 loaderMap: {
                   svg: {
-                    ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]'
-                  }
-                }
-              }
-            ]
-          ]
-        }
+                    ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+                  },
+                },
+              },
+            ],
+          ],
+        },
       },
-      require.resolve('react-docgen-typescript-loader')
-    ]
+      require.resolve('react-docgen-typescript-loader'),
+    ],
   });
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
