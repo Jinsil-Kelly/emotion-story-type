@@ -1,12 +1,11 @@
-const path = require("path");
-
-module.exports = ({ config, mode }) => {
+module.exports = ({ config }) => {
   config.module.rules.push({
     test: /\.(ts|tsx)$/,
     use: [
       {
         loader: require.resolve('babel-loader'),
         options: {
+          // presets: [require.resolve("babel-preset-react-app")],
           presets: [['react-app', { flow: false, typescript: true }]],
           plugins: [
             [
@@ -25,11 +24,6 @@ module.exports = ({ config, mode }) => {
       require.resolve('react-docgen-typescript-loader'),
     ],
   });
-  config.resolve.modules = ["node_modules", path.resolve(__dirname, "../src")];
-  // console.log(config.resolve.modules);
-
-  //below has error
-  // config.resolve.modules = [path.resolve(__dirname, 'src'), 'node_modules'];
 
   config.resolve.extensions.push('.ts', '.tsx');
   return config;
