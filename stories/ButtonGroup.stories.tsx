@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, text, radios, boolean } from '@storybook/addon-knobs';
-import ButtonGroup from '../src/components/ButtonGroup/ButtonGroup';
-import Button from '../src/components/Button/Button';
+import ButtonGroup from 'components/ButtonGroup/ButtonGroup';
+import Button from 'components/Button/Button';
 
 export default {
   title: 'components|ButtonGroup',

@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import React, { Fragment } from 'react';
-import { jsx } from '@emotion/core';
-import ButtonGroup from '../ButtonGroup/ButtonGroup';
-import Button from '../Button/Button';
-import { darkLayer, fullscreen, whiteBox, whiteBoxWrapper } from './DialogStyle';
 import { useTransition, animated } from 'react-spring';
+import { jsx } from '@emotion/core';
+import Button from 'components/Button/Button';
+import ButtonGroup from 'components/ButtonGroup/ButtonGroup';
+import { darkLayer, fullscreen, whiteBox, whiteBoxWrapper } from './DialogStyle';
 
 export type DialogProps = {
   visible: boolean;

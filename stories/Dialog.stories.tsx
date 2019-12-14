@@ -1,6 +1,6 @@
 import React from 'react';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import Dialog from '../src/components/Dialog/Dialog';
+import Dialog from 'components/Dialog/Dialog';
 
 export default {
   title: 'components|Dialog',

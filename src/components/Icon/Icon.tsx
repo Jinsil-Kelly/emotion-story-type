@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import * as icons from '../../assets/svg';
+import * as icons from 'assets/svg';
 
 type IconType = keyof typeof icons;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
