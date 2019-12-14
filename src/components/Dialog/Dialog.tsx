@@ -19,7 +19,8 @@ export type DialogProps = {
   onConfirm?: () => void;
 };
 
-function Dialog({
+//function keyword can't reflect defaultProp to storybook
+const Dialog = ({
   visible,
   title,
   description,
@@ -30,7 +31,7 @@ function Dialog({
   children,
   onCancel,
   onConfirm,
-}: DialogProps) {
+}: DialogProps) => {
   const fadeTransition = useTransition(visible, null, {
     from: { opacity: 0 },
     enter: { opacity: 1 },
@@ -82,7 +83,7 @@ function Dialog({
       )}
     </Fragment>
   );
-}
+};
 Dialog.defaultProps = {
   cancelText: 'No',
   confirmText: 'Yes',

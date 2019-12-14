@@ -19,13 +19,13 @@ export type ButtonGroupProps = {
 /**
  * Use the `ButtonGroup` component when you want to show multiple `Button` components, or if you want to align the buttons to the right.
  */
-function ButtonGroup({
+const ButtonGroup = ({
   direction,
   rightAlign,
   children,
   gap,
   className,
-}: ButtonGroupProps) {
+}: ButtonGroupProps) => {
   return (
     <div
       css={[
@@ -41,7 +41,7 @@ function ButtonGroup({
       {children}
     </div>
   );
-}
+};
 
 ButtonGroup.defaultProps = {
   direction: 'row',

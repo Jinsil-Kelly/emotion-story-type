@@ -21,6 +21,7 @@ module.exports = ({ config }) => {
           ],
         },
       },
+      //https://github.com/storybookjs/storybook/blob/next/addons/docs/README.md#installation
       require.resolve('react-docgen-typescript-loader'),
     ],
   });

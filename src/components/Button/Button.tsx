@@ -21,7 +21,7 @@ type ButtonProps = {
 };
 
 /** The `Button` component is used to trigger any action.  */
-function Button({
+const Button = ({
   iconOnly,
   width,
   disabled,
@@ -29,7 +29,7 @@ function Button({
   size,
   children,
   onClick,
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       disabled={disabled}
@@ -45,7 +45,7 @@ function Button({
       {children}
     </button>
   );
-}
+};
 Button.defaultProps = {
   theme: 'primary',
   size: 'medium',
