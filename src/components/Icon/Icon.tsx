@@ -11,8 +11,10 @@ export type IconProps = {
   icon: IconType;
   /** Icon color  */
   color?: string;
-  /** Icon size */
-  size?: string | number;
+  /** Icon width */
+  width?: string | number;
+  /** Icon height */
+  height?: string | number;
   /** Use when you want to customize style */
   className?: string;
 };
@@ -23,11 +25,16 @@ export type IconProps = {
  *
  * When setting the appearance by style, set the color by `color` and the size by `width`.
  */
-const Icon = ({ icon, color, size, className }: IconProps) => {
+const Icon = ({ icon, color, width, height, className }: IconProps) => {
   const SVGIcon = icons[icon];
   return (
     <SVGIcon
-      css={{ fill: color || 'currentColor', width: size, height: 'auto' }}
+      css={{
+        fill: color || 'currentColor',
+        width,
+        height,
+        maxHeight: '100%',
+      }}
       className={className}
     />
   );
