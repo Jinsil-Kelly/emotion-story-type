@@ -1,18 +1,27 @@
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import Icon, { iconTypes } from 'components/Icon/Icon';
+import { text, withKnobs } from '@storybook/addon-knobs';
 
 export default {
   component: Icon,
   title: 'components|Icon',
+  decorators: [withKnobs],
 };
 
-export const icon = () => <Icon icon="heart" />;
+export const icon = () => {
+  const width = text('width', '');
+  const height = text('height', '');
+  const color = text('color', '');
+
+  return <Icon width={width} icon="heart" color={color} height={height} />;
+};
+
 icon.story = {
   name: 'Default',
 };
 
-export const customSize = () => <Icon icon="heart" size="4rem" />;
+export const customSize = () => <Icon icon="heart" width="4rem" height="4rem" />;
 
 export const customColor = () => <Icon icon="heart" color="red" />;
 
