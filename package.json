@@ -70,7 +70,6 @@
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
     "babel-loader": "^8.0.6",
-    "babel-plugin-emotion": "^10.0.23",
     "babel-plugin-macros": "^2.8.0",
     "emotion-theming": "^10.0.19",
     "eslint": "^6.7.2",
