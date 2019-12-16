@@ -1,27 +1,30 @@
 import React from 'react';
-import { Global, css } from '@emotion/core';
+import { Global } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import Button from 'components/Button/Button';
 import ButtonGroup from 'components/ButtonGroup/ButtonGroup';
 import Icon from 'components/Icon/Icon';
 import theme from 'utils/theme';
-import 'App.css';
+import Input from './components/Input/Input';
+import RadioButton from './components/RadioButton/RadioButton';
+import CheckBox from './components/CheckBox/CheckBox';
+import { Container } from './components/shared/PageLayout';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Global styles={css``} />
-      <div className="App">
-        <button>hello</button>
-        <div>
-          <ButtonGroup>
-            <Button>btn1</Button>
-            <Button>btn2</Button>
-          </ButtonGroup>
-          <Button>hell</Button>
-          <Icon icon={'heart'} color={'red'} width={'50px'} />
-        </div>
-      </div>
+      <Global styles={''} />
+      <Container>
+        <Input register={() => console.log('register)')} name={'sampleInput'} />
+        <Button>Button</Button>
+        <RadioButton content="RadioBtn" />
+        <CheckBox content="CheckBox" />
+        <ButtonGroup>
+          <Button>Button</Button>
+          <Button>Button</Button>
+          <Icon icon={'heart'} color={'darkOrange'} />
+        </ButtonGroup>
+      </Container>
     </ThemeProvider>
   );
 };
