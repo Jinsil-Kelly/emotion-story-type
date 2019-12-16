@@ -14,6 +14,8 @@ export const input = () => {
   const label = text('label', '');
   const placeholder = text('placeholder', '');
   const name = text('name', '');
+  const type = text('type', '');
+  const initialValue = text('initialValue', '');
 
   return (
     <Input
@@ -21,11 +23,11 @@ export const input = () => {
       label={label}
       name={name}
       register={action('register')}
+      initialValue={initialValue}
+      type={type}
     />
   );
 };
 input.story = {
   name: 'Default',
 };
-
-//라벨을 가지는 인풋, 플레이스홀더 스토리, 디폴트값을 가지는 인풋 스토리

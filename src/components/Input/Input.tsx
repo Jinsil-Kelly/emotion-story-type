@@ -26,9 +26,11 @@ const Input = ({
 }: InputProps) => {
   return (
     <Fragment>
-      <label htmlFor={name} css={[labelStyle]}>
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} css={[labelStyle]}>
+          {label}
+        </label>
+      )}
       <input
         css={[inputStyle]}
         defaultValue={initialValue}
