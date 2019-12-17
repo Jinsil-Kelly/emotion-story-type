@@ -14,7 +14,6 @@ const RadioButton = ({ register, content }: RadioButtonProps) => {
     const value = event.target.value;
     setSelect(value);
   };
-
   return (
     <div>
       <RadioButtonStyle>

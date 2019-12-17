@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { CheckBoxStyle } from './CheckBoxStyle';
+
 type CheckBoxProps = {
   register: () => void;
   /** Content next to checkBox */

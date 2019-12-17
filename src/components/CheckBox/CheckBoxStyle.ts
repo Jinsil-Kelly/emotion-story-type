@@ -1,6 +1,6 @@
-import theme from 'utils/theme';
-import styled from '@emotion/styled/macro';
+import styled from 'utils/types';
 //https://codepen.io/imomer/pen/qoLVZg
+
 export const CheckBoxStyle = styled.div`
 .checkBoxLabel{
   display:flex;
@@ -38,14 +38,14 @@ word-wrap: break-word;
   }
 
   // &:hover input ~ .checkBoxCustom  {
-  //   background-color: ${theme.colors.grey};
+  //   background-color: ${props => props.theme.colors.grey};
   // }
   .checkBoxInput:checked ~ .checkBoxCustom  {
-    background-color: ${theme.colors.active};
-    color:${theme.colors.active};
+    background-color: ${props => props.theme.colors.active};
+    color:${props => props.theme.colors.active};
   }
   .checkBoxInput:checked ~ .checkBoxContent {
-    color:${theme.colors.active};
+    color:${props => props.theme.colors.active};
         // transition: color 0.1s linear; 
   }
   .checkBoxCustom:after {
