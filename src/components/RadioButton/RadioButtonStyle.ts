@@ -1,6 +1,6 @@
-import theme from 'utils/theme';
-import styled from '@emotion/styled/macro';
 //https://codepen.io/imomer/pen/qoLVZg
+import styled from 'utils/types';
+
 export const RadioButtonStyle = styled.div`
 .radioButtonLabel{
   display:flex;
@@ -30,9 +30,9 @@ export const RadioButtonStyle = styled.div`
     left: 0;
    width: 24px;
     height: 24px;
-    background-color: #fff;
+    background-color: ${props => props.theme.colors.white};
     border-radius: 50%;
-    border: solid 2px #ccc;
+    border: 2px solid ${props => props.theme.colors.grey};
   }
   
   .radioButtonContent{
@@ -45,14 +45,14 @@ word-wrap: break-word;
   }
 
   // &:hover input ~ .radioButtonCustom  {
-  //   background-color: ${theme.colors.grey};
+  //   background-color: ${props => props.theme.colors.grey};
   // }
   .radioButtonInput:checked ~ .radioButtonCustom  {
-    background-color: #fff;
-    border: solid 2px ${theme.colors.active};
+    background-color: ${props => props.theme.colors.white};
+    border: solid 2px ${props => props.theme.colors.active};
   }
   .radioButtonInput:checked ~ .radioButtonContent {
-    color:${theme.colors.active};
+    color:${props => props.theme.colors.active};
         // transition: color 0.1s linear; 
   }
   .radioButtonCustom:after {
@@ -71,6 +71,6 @@ word-wrap: break-word;
     height: 12px;
     border-radius: 50%;
     margin: 6px;
-    background: darkOrange;
+    background:${props => props.theme.colors.active};
   }
 `;
