@@ -67,6 +67,7 @@
     "@storybook/addon-links": "^5.2.8",
     "@storybook/addons": "^5.2.8",
     "@storybook/react": "^5.2.8",
+    "@types/react-select": "^3.0.8",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
     "babel-loader": "^8.0.6",
@@ -80,6 +81,7 @@
     "postcss-normalize": "^8.0.1",
     "prettier": "^1.19.1",
     "react-docgen-typescript-loader": "^3.6.0",
-    "react-hook-form": "^3.29.1"
+    "react-hook-form": "^3.29.1",
+    "react-select": "^3.0.8"
   }
 }

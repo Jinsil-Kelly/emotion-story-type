@@ -18,10 +18,12 @@ type ButtonProps = {
   width?: string | number;
   /** Set this to `true` when showing only icons on buttons. */
   iconOnly?: boolean;
+  type?: 'button' | 'reset' | 'submit' | undefined;
 };
 
 /** The `Button` component is used to trigger any action.  */
 const Button = ({
+  type,
   iconOnly,
   width,
   disabled,
@@ -41,6 +43,7 @@ const Button = ({
         iconOnly && [iconOnlyStyle, iconOnlySizes[size]],
       ]}
       onClick={onClick}
+      type={type}
     >
       {children}
     </button>

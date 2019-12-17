@@ -11,6 +11,8 @@ import { useThemeMode } from 'hooks/useThemeMode';
 import getTheme from './utils/theme';
 import { ThemeProvider, withTheme } from 'emotion-theming';
 import { makeGlobalStyles } from './utils/globelStyles';
+import SelectBox from 'components/SelectBox/SelectBox';
+import Form from 'components/Form/Form';
 
 const GlobalStyles = withTheme(({ theme }) => (
   <Global styles={makeGlobalStyles(theme)} />
@@ -27,12 +29,33 @@ const App = () => {
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
       <Container>
-        <Input register={() => console.log('register')} name={'sampleInput'} />
+        <Form defaultValues={{ sex: 'female' }}>
+          <Input name="firstName" label="First Name" />
+          <Input name="lastName" label="Last Name" />
+          <RadioButton content="RadioBtn" name="sex" value="female" />
+          <RadioButton content="RadioBtn" name="sex" value="male" />
+          <CheckBox content="CheckBox" name="checkbox" />
+          <SelectBox
+            label="Select Label"
+            placeholder="When options Empty"
+            name="SelectName"
+            options={[]}
+          />
+          <SelectBox
+            label="Select Label"
+            placeholder="Ho Ho Ho"
+            name="SelectTest"
+            options={[
+              { value: 'chocolate', label: 'Chocolate' },
+              { value: 'strawberry', label: 'Strawberry' },
+              { value: 'vanilla', label: 'Vanilla' },
+            ]}
+          />
+          <Button type={'submit'}>Submit</Button>
+        </Form>
         <Button onClick={() => toggleTheme()}>
           {theme === 'light' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         </Button>
-        <RadioButton content="RadioBtn" />
-        <CheckBox content="CheckBox" />
         <ButtonGroup>
           <Button>Button</Button>
           <Button>Button</Button>
