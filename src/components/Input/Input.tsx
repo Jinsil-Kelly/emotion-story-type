@@ -2,9 +2,9 @@
 import { Fragment } from 'react';
 import { jsx } from '@emotion/core';
 import { labelStyle, inputStyle } from './InputStyle';
+import { useFormContext } from 'react-hook-form';
 
 type InputProps = {
-  register: () => void;
   /** Input type */
   type?: string;
   /** Input name */
@@ -16,14 +16,9 @@ type InputProps = {
 };
 
 /** The `Input` component is used to .....  */
-const Input = ({
-  register,
-  type,
-  name,
-  placeholder,
-  initialValue,
-  label,
-}: InputProps) => {
+const Input = ({ type, name, placeholder, initialValue, label }: InputProps) => {
+  const methods = useFormContext();
+
   return (
     <Fragment>
       {label && (
@@ -37,7 +32,7 @@ const Input = ({
         type={type}
         placeholder={placeholder}
         name={name}
-        ref={register}
+        ref={methods.register}
       />
     </Fragment>
   );

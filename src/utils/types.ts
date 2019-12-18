@@ -8,3 +8,8 @@ export type ThemeProps = {
   };
 };
 export default styled as CreateStyled<ThemeProps>;
+
+export type selectBoxOptionsType = {
+  value: string;
+  label: string;
+}[];
