@@ -15,6 +15,7 @@ import Form from 'components/Form/Form';
 import { sampleSchema } from './utils/validation';
 import CheckBoxGroup from './components/CheckBoxGroup/CheckBoxGroup';
 import { Container } from 'components/shared/PageLayout';
+import NewButton from './components/NewButton/NewButton';
 
 const GlobalStyles = withTheme(({ theme }) => (
   <Global styles={makeGlobalStyles(theme)} />
@@ -31,6 +32,10 @@ const App = () => {
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
       <Container color="primary">
+        <NewButton>Styled System Button!</NewButton> <br />
+        <NewButton mt={3} size="large">
+          Styled System Button!
+        </NewButton>
         <Form defaultValues={{ sex: 'female' }} schema={sampleSchema}>
           <Input name="firstName" label="First Name" />
           <Input name="lastName" label="Last Name" />

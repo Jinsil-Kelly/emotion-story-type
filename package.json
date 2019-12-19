@@ -84,6 +84,8 @@
     "react-docgen-typescript-loader": "^3.6.0",
     "react-hook-form": "^3.29.1",
     "react-select": "^3.0.8",
-    "yup": "^0.28.0"
+    "yup": "^0.28.0",
+    "@types/styled-system": "^5.1.4",
+    "styled-system": "^5.1.4"
   }
 }
