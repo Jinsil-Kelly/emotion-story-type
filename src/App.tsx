@@ -6,7 +6,6 @@ import Icon from 'components/Icon/Icon';
 import Input from './components/Input/Input';
 import RadioButton from './components/RadioButton/RadioButton';
 import CheckBox from './components/CheckBox/CheckBox';
-import { Container } from './components/shared/PageLayout';
 import { useThemeMode } from 'hooks/useThemeMode';
 import getTheme from './utils/theme';
 import { ThemeProvider, withTheme } from 'emotion-theming';
@@ -15,6 +14,7 @@ import SelectBox from 'components/SelectBox/SelectBox';
 import Form from 'components/Form/Form';
 import { sampleSchema } from './utils/validation';
 import CheckBoxGroup from './components/CheckBoxGroup/CheckBoxGroup';
+import { Container } from 'components/shared/PageLayout';
 
 const GlobalStyles = withTheme(({ theme }) => (
   <Global styles={makeGlobalStyles(theme)} />
@@ -30,7 +30,7 @@ const App = () => {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <Container>
+      <Container color="primary">
         <Form defaultValues={{ sex: 'female' }} schema={sampleSchema}>
           <Input name="firstName" label="First Name" />
           <Input name="lastName" label="Last Name" />

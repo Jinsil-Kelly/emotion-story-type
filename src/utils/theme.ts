@@ -1,12 +1,6 @@
 const staticTheme = {
-  colors: {
-    success: 'green',
+  baseColors: {
     error: '#BF1650',
-    white: '#fff',
-    grey: '#ccc',
-    active: '#FF8C00',
-    black: '#161617',
-    gray: '#F8F8F9',
   },
   checkboxSize: 20,
   checkDash: 48,
@@ -16,13 +10,43 @@ const staticTheme = {
   aniSpeedFastest: 0.15,
 };
 const themeLight = {
-  background: staticTheme.colors.active,
-  body: staticTheme.colors.white,
+  background: '#161617',
+  body: '#fff',
+  colors: {
+    success: 'green',
+    error: staticTheme.baseColors.error,
+    white: '#fff',
+    grey: '#ccc',
+    active: '#FF8C00',
+    black: '#161617',
+    gray: '#F8F8F9',
+    secondary: 'red',
+    primary: 'blue',
+  },
+  fontColor: {
+    primary: '#161617',
+    active: '#FF8C00',
+  },
 };
 
 const themeDark = {
-  background: staticTheme.colors.white,
-  body: staticTheme.colors.success,
+  background: '#fff',
+  body: '#161617',
+  colors: {
+    success: 'green',
+    error: staticTheme.baseColors.error,
+    white: '#fff',
+    grey: '#ccc',
+    active: '#FF8C00',
+    black: '#161617',
+    gray: '#F8F8F9',
+    primary: 'red',
+    secondary: 'blue',
+  },
+  fontColor: {
+    primary: '#fafafa',
+    active: '#FF8C00',
+  },
 };
 
 const theme = (mode: string): object =>
