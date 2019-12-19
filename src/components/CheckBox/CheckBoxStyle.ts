@@ -34,7 +34,7 @@ export const CheckBoxStyle = styled.div`
   margin:0px;
   min-height:25px;
   line-height:25px;
-word-wrap: break-word;
+word-break: break-word;
   }
 
   // &:hover input ~ .checkBoxCustom  {

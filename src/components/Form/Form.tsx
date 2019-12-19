@@ -2,16 +2,18 @@
 import React from 'react';
 import { jsx } from '@emotion/core';
 import useForm, { FormContext } from 'react-hook-form';
-
+import { ObjectSchema } from 'yup';
 type FormProps = {
   children: React.ReactNode;
   defaultValues?: {
     [key: string]: any;
   };
+  schema?: ObjectSchema;
 };
-const Form = ({ defaultValues, children }: FormProps) => {
+const Form = ({ schema, defaultValues, children }: FormProps) => {
   const methods = useForm({
     defaultValues,
+    validationSchema: schema,
   });
   const { handleSubmit } = methods;
   // useEffect(() => {

@@ -5,6 +5,7 @@ import Select from 'react-select';
 import { useFormContext } from 'react-hook-form';
 import { selectBoxOptionsType } from 'utils/types';
 import { SelectBoxStyle } from './SelectBoxStyle';
+import { ErrorMessage } from '../shared/ErrorMessage';
 
 //https://codesandbox.io/s/pkwwq0wlq0
 
@@ -54,6 +55,9 @@ const SelectBox = ({
         onChange={handleMultiChange}
         isMulti={isMulti}
       />
+      {methods.errors[name] && (
+        <ErrorMessage>{methods.errors[name]!.message}</ErrorMessage>
+      )}
     </Fragment>
   );
 };
