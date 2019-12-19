@@ -33,7 +33,7 @@ const staticTheme = {
     large: {
       fontSize: baseTheme.fontSizes[3],
       padding: `12px 24px`,
-      borderRadius: baseTheme.radii[3],
+      borderRadius: baseTheme.radii[2],
     },
   },
   baseColors: {
