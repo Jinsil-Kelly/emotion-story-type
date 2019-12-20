@@ -5,6 +5,9 @@ export const baseTheme = {
     blue: '#07c',
     tomato: 'tomato',
     purple: 'purple',
+    lightGreen: '#20c997',
+    secondaryBtn: '#e9ecef',
+    darkGrey: '#343a40',
   },
   radii: [0, 2, 4, 8],
 };
@@ -13,11 +16,57 @@ const staticTheme = {
   buttons: {
     primary: {
       color: 'white',
-      backgroundColor: baseTheme.colors.blue,
+      backgroundColor: baseTheme.colors.lightGreen,
+      svg: {
+        fill: 'white',
+      },
+      '&:hover:enabled': {
+        background: '#38d9a9',
+      },
+      '&:active:enabled': {
+        background: '#12b886',
+      },
+      '&:disabled': {
+        background: '#aed9cc',
+      },
     },
     secondary: {
-      color: 'white',
-      backgroundColor: baseTheme.colors.purple,
+      color: baseTheme.colors.darkGrey,
+      backgroundColor: baseTheme.colors.secondaryBtn,
+      svg: {
+        fill: baseTheme.colors.darkGrey,
+      },
+      '&:hover:enabled': {
+        background: '#f1f3f5',
+      },
+      '&:active:enabled': {
+        background: '#dee2e6',
+      },
+      '&:disabled': {
+        background: '#c6d3e1',
+        svg: {
+          fill: '#c6d3e1',
+        },
+      },
+    },
+    tertiary: {
+      color: baseTheme.colors.lightGreen,
+      backgroundColor: 'none',
+      svg: {
+        fill: baseTheme.colors.lightGreen,
+      },
+      '&:hover:enabled': {
+        background: '#e6fcf5',
+      },
+      '&:active:enabled': {
+        background: '#c3fae8',
+      },
+      '&:disabled': {
+        background: '#bcd9d0',
+        svg: {
+          fill: '#bcd9d0',
+        },
+      },
     },
     danger: {
       color: 'white',

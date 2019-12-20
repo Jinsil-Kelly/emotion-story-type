@@ -36,6 +36,15 @@ const App = () => {
         <NewButton mt={3} size="large">
           Styled System Button!
         </NewButton>
+        <NewButton mt={3} variant="secondary" disabled>
+          Styled System Button!
+        </NewButton>
+        <NewButton mt={3} size="large" variant="tertiary">
+          Styled System Button!
+        </NewButton>
+        <NewButton mt={3} size="large" variant="danger">
+          Styled System Button!
+        </NewButton>
         <Form defaultValues={{ sex: 'female' }} schema={sampleSchema}>
           <Input name="firstName" label="First Name" />
           <Input name="lastName" label="Last Name" />
