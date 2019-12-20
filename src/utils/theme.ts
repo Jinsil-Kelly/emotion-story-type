@@ -2,6 +2,7 @@ export const baseTheme = {
   space: [0, 2, 4, 8, 16, 32],
   fontSizes: [14, 16, 18, 24, 32],
   colors: {
+    white: '#fff',
     blue: '#07c',
     tomato: 'tomato',
     purple: 'purple',
@@ -15,10 +16,10 @@ export const baseTheme = {
 const staticTheme = {
   buttons: {
     primary: {
-      color: 'white',
-      backgroundColor: baseTheme.colors.lightGreen,
+      color: baseTheme.colors.white,
+      background: baseTheme.colors.lightGreen,
       svg: {
-        fill: 'white',
+        fill: baseTheme.colors.white,
       },
       '&:hover:enabled': {
         background: '#38d9a9',
@@ -31,8 +32,8 @@ const staticTheme = {
       },
     },
     secondary: {
+      background: baseTheme.colors.secondaryBtn,
       color: baseTheme.colors.darkGrey,
-      backgroundColor: baseTheme.colors.secondaryBtn,
       svg: {
         fill: baseTheme.colors.darkGrey,
       },
@@ -43,15 +44,15 @@ const staticTheme = {
         background: '#dee2e6',
       },
       '&:disabled': {
-        background: '#c6d3e1',
+        color: '#c6d3e1',
         svg: {
           fill: '#c6d3e1',
         },
       },
     },
     tertiary: {
+      background: 'none',
       color: baseTheme.colors.lightGreen,
-      backgroundColor: 'none',
       svg: {
         fill: baseTheme.colors.lightGreen,
       },
@@ -62,7 +63,7 @@ const staticTheme = {
         background: '#c3fae8',
       },
       '&:disabled': {
-        background: '#bcd9d0',
+        color: '#bcd9d0',
         svg: {
           fill: '#bcd9d0',
         },

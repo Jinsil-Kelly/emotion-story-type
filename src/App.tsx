@@ -33,14 +33,14 @@ const App = () => {
       <GlobalStyles />
       <Container color="primary">
         <NewButton>Styled System Button!</NewButton> <br />
-        <NewButton mt={3} size="large">
-          Styled System Button!
+        <NewButton mt={3} variant="primary">
+          primary
         </NewButton>
-        <NewButton mt={3} variant="secondary" disabled>
-          Styled System Button!
+        <NewButton mt={3} variant="secondary">
+          secondary
         </NewButton>
         <NewButton mt={3} size="large" variant="tertiary">
-          Styled System Button!
+          tertiary
         </NewButton>
         <NewButton mt={3} size="large" variant="danger">
           Styled System Button!
@@ -74,6 +74,9 @@ const App = () => {
             ]}
           />
           <Button type={'submit'}>Submit</Button>
+          <NewButton mt={3} variant="primary" type="submit">
+            primary
+          </NewButton>
         </Form>
         <Button onClick={() => toggleTheme()}>
           {theme === 'light' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
