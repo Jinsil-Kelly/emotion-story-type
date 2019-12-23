@@ -6,6 +6,9 @@ export type ThemeProps = {
   colors: {
     [key: string]: string;
   };
+  fontColor: {
+    [key: string]: string;
+  };
 };
 export default styled as CreateStyled<ThemeProps>;
 

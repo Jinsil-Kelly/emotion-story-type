@@ -6,7 +6,6 @@ import Icon from 'components/Icon/Icon';
 import Input from './components/Input/Input';
 import RadioButton from './components/RadioButton/RadioButton';
 import CheckBox from './components/CheckBox/CheckBox';
-import { Container } from './components/shared/PageLayout';
 import { useThemeMode } from 'hooks/useThemeMode';
 import getTheme from './utils/theme';
 import { ThemeProvider, withTheme } from 'emotion-theming';
@@ -15,6 +14,8 @@ import SelectBox from 'components/SelectBox/SelectBox';
 import Form from 'components/Form/Form';
 import { sampleSchema } from './utils/validation';
 import CheckBoxGroup from './components/CheckBoxGroup/CheckBoxGroup';
+import { Container } from 'components/shared/PageLayout';
+import NewButton from './components/NewButton/NewButton';
 
 const GlobalStyles = withTheme(({ theme }) => (
   <Global styles={makeGlobalStyles(theme)} />
@@ -30,7 +31,20 @@ const App = () => {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
-      <Container>
+      <Container color="primary">
+        <NewButton>Styled System Button!</NewButton> <br />
+        <NewButton mt={3} variant="primary">
+          primary
+        </NewButton>
+        <NewButton mt={3} variant="secondary">
+          secondary
+        </NewButton>
+        <NewButton mt={3} size="large" variant="tertiary">
+          tertiary
+        </NewButton>
+        <NewButton mt={3} size="large" variant="danger">
+          Styled System Button!
+        </NewButton>
         <Form defaultValues={{ sex: 'female' }} schema={sampleSchema}>
           <Input name="firstName" label="First Name" />
           <Input name="lastName" label="Last Name" />
@@ -60,6 +74,9 @@ const App = () => {
             ]}
           />
           <Button type={'submit'}>Submit</Button>
+          <NewButton mt={3} variant="primary" type="submit">
+            primary
+          </NewButton>
         </Form>
         <Button onClick={() => toggleTheme()}>
           {theme === 'light' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
