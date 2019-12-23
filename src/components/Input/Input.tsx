@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import { jsx } from '@emotion/core';
 import { labelStyle, inputStyle } from './InputStyle';
 import { useFormContext } from 'react-hook-form';
+import { ErrorMessage } from 'components/shared/ErrorMessage';
 
 type InputProps = {
   /** Input type */
@@ -17,7 +18,7 @@ type InputProps = {
 
 /** The `Input` component is used to .....  */
 const Input = ({ type, name, placeholder, initialValue, label }: InputProps) => {
-  const methods = useFormContext();
+  const { register, errors } = useFormContext();
 
   return (
     <Fragment>
@@ -32,10 +33,11 @@ const Input = ({ type, name, placeholder, initialValue, label }: InputProps) => 
         type={type}
         placeholder={placeholder}
         name={name}
-        ref={methods.register}
+        ref={register}
       />
+      {errors[name] && <ErrorMessage>{errors[name]!.message}</ErrorMessage>}
     </Fragment>
   );
 };
-
+//https://stackoverflow.com/questions/40349987/how-to-suppress-error-ts2533-object-is-possibly-null-or-undefined
 export default Input;

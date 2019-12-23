@@ -13,6 +13,8 @@ import { ThemeProvider, withTheme } from 'emotion-theming';
 import { makeGlobalStyles } from './utils/globelStyles';
 import SelectBox from 'components/SelectBox/SelectBox';
 import Form from 'components/Form/Form';
+import { sampleSchema } from './utils/validation';
+import CheckBoxGroup from './components/CheckBoxGroup/CheckBoxGroup';
 
 const GlobalStyles = withTheme(({ theme }) => (
   <Global styles={makeGlobalStyles(theme)} />
@@ -29,12 +31,17 @@ const App = () => {
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
       <Container>
-        <Form defaultValues={{ sex: 'female' }}>
+        <Form defaultValues={{ sex: 'female' }} schema={sampleSchema}>
           <Input name="firstName" label="First Name" />
           <Input name="lastName" label="Last Name" />
-          <RadioButton content="RadioBtn" name="sex" value="female" />
-          <RadioButton content="RadioBtn" name="sex" value="male" />
-          <CheckBox content="CheckBox" name="checkbox" />
+          <RadioButton content="female" name="sex" value="female" />
+          <RadioButton content="male" name="sex" value="male" />
+          <RadioButton content="animal" name="sex" value="animal" />
+          <CheckBoxGroup groupName="checkBoxGroup" direction="row" gap="0">
+            <CheckBox content="CheckBox1" name="checkbox1" />
+            <CheckBox content="CheckBox2" name="checkbox2" />
+            <CheckBox content="CheckBox3" name="checkbox3" />
+          </CheckBoxGroup>
           <SelectBox
             label="Select Label"
             placeholder="When options Empty"
@@ -42,6 +49,7 @@ const App = () => {
             options={[]}
           />
           <SelectBox
+            isMulti={true}
             label="Select Label"
             placeholder="Ho Ho Ho"
             name="SelectTest"

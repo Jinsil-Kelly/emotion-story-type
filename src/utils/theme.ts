@@ -1,7 +1,7 @@
 const staticTheme = {
   colors: {
     success: 'green',
-    error: 'red',
+    error: '#BF1650',
     white: '#fff',
     grey: '#ccc',
     active: '#FF8C00',
