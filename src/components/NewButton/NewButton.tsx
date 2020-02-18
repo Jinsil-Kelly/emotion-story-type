@@ -4,7 +4,6 @@
 import styled from '@emotion/styled';
 import {
   borderRadius,
-  buttonStyle,
   space,
   fontSize,
   variant,
@@ -14,36 +13,14 @@ import {
   ButtonStyleProps,
 } from 'styled-system';
 import React from 'react';
+import Element from 'utils/Element';
+import { buttonStyle, buttonSize } from '../../themes/buttonStyle';
 
-const buttonSize = variant({
-  scale: 'buttonSizes',
-  prop: 'size',
-});
-
-type NewButtonProps =
-  | {
-      iconOnly?: boolean;
-      width?: string | number;
-      type?: 'button' | 'reset' | 'submit' | undefined;
-      size: 'small' | 'medium' | 'large';
-      disabled?: boolean;
-      onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
-    }
-  | FontSizeProps
-  | SpaceProps
-  | BorderRadiusProps
-  | ButtonStyleProps;
-
-const NewButton = styled.button<NewButtonProps>`
-    ${borderRadius}
-    ${buttonStyle}
-    ${space}
-    ${fontSize}
-    ${buttonSize}
+const ButtonElem = styled(Element)`
   outline: none;
   border: none;
-  // box-sizing: border-box;
-  // height: 2rem;
+  box-sizing: border-box;
+  height: 2.5rem;
   // font-size: 0.875rem;
   // padding: 0 1rem;
   // border-radius: 0.25rem;
@@ -52,12 +29,8 @@ const NewButton = styled.button<NewButtonProps>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-    // appearance: button;
-    // border: 0;
-    // outline: 0;
-   
-     &:focus {
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+  &:focus {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   }
   &:disabled {
     cursor: not-allowed;
@@ -66,48 +39,20 @@ const NewButton = styled.button<NewButtonProps>`
     width: 1em;
     margin-right: 1em;
   }
-    `;
-// type ButtonProps = {
-//   /** Button content */
-//   children: React.ReactNode;
-//   /** the function when clicked */
-//   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
-//   /** Button shape */
-//   variant?: 'primary' | 'secondary' | 'tertiary' | 'danger';
-//   /** Button size*/
-//   size: 'small' | 'medium' | 'large';
-//   /** disable Button */
-//   disabled?: boolean;
-//   /** Button width */
-//   width?: string | number;
-//   /** Set this to `true` when showing only icons on buttons. */
-//   iconOnly?: boolean;
-//   type?: 'button' | 'reset' | 'submit' | undefined;
-//   mt?: number;
-// };
-// const NewButton = ({
-//   mt,
-//   type,
-//   iconOnly,
-//   width,
-//   disabled,
-//   variant,
-//   size,
-//   children,
-//   onClick,
-// }: ButtonProps) => {
-//   return (
-//     <BtnWrap
-//       onClick={onClick}
-//       size={size}
-//       disabled={disabled}
-//       variant={variant}
-//       mt={mt}
-//     >
-//       {children}
-//     </BtnWrap>
-//   );
-// };
+  ${buttonSize}
+  ${buttonStyle}
+`;
+const NewButton = ({ variant, type, size, appearance, ...rest }: any) => {
+  return (
+    <ButtonElem
+      variant={variant}
+      size={size}
+      appearance={appearance}
+      as="button"
+      {...rest}
+    />
+  );
+};
 
 NewButton.defaultProps = {
   variant: 'primary',

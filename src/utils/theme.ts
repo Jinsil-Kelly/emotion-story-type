@@ -1,91 +1,18 @@
-export const baseTheme = {
-  space: [0, 2, 4, 8, 16, 32],
-  fontSizes: [14, 16, 18, 24, 32],
-  colors: {
-    white: '#fff',
-    blue: '#07c',
-    tomato: 'tomato',
-    purple: 'purple',
-    lightGreen: '#20c997',
-    secondaryBtn: '#e9ecef',
-    darkGrey: '#343a40',
-  },
-  radii: [0, 2, 4, 8],
-};
-
 const staticTheme = {
-  buttons: {
-    primary: {
-      color: baseTheme.colors.white,
-      background: baseTheme.colors.lightGreen,
-      svg: {
-        fill: baseTheme.colors.white,
-      },
-      '&:hover:enabled': {
-        background: '#38d9a9',
-      },
-      '&:active:enabled': {
-        background: '#12b886',
-      },
-      '&:disabled': {
-        background: '#aed9cc',
-      },
-    },
-    secondary: {
-      background: baseTheme.colors.secondaryBtn,
-      color: baseTheme.colors.darkGrey,
-      svg: {
-        fill: baseTheme.colors.darkGrey,
-      },
-      '&:hover:enabled': {
-        background: '#f1f3f5',
-      },
-      '&:active:enabled': {
-        background: '#dee2e6',
-      },
-      '&:disabled': {
-        color: '#c6d3e1',
-        svg: {
-          fill: '#c6d3e1',
-        },
-      },
-    },
-    tertiary: {
-      background: 'none',
-      color: baseTheme.colors.lightGreen,
-      svg: {
-        fill: baseTheme.colors.lightGreen,
-      },
-      '&:hover:enabled': {
-        background: '#e6fcf5',
-      },
-      '&:active:enabled': {
-        background: '#c3fae8',
-      },
-      '&:disabled': {
-        color: '#bcd9d0',
-        svg: {
-          fill: '#bcd9d0',
-        },
-      },
-    },
-    danger: {
-      color: 'white',
-      backgroundColor: baseTheme.colors.tomato,
-    },
-  },
-  buttonSizes: {
-    medium: {
-      fontSize: baseTheme.fontSizes[2],
-      padding: `8px 16px`,
-      borderRadius: baseTheme.radii[2],
-    },
-    large: {
-      fontSize: baseTheme.fontSizes[3],
-      padding: `12px 24px`,
-      borderRadius: baseTheme.radii[2],
-    },
-  },
+  // buttons: type,
+  // buttonSizes: buttonSize,
+  // buttonSizes: {
+  //   medium: {
+  //     fontSize: baseTheme.fontSizes[2],
+  //     padding: `8px 16px`,
+  //     borderRadius: baseTheme.radii[2],
+  //   },
+  //   large: {
+  //     fontSize: baseTheme.fontSizes[3],
+  //     padding: `12px 24px`,
+  //     borderRadius: baseTheme.radii[2],
+  //   },
+  // },
   baseColors: {
     error: '#BF1650',
   },
@@ -96,19 +23,143 @@ const staticTheme = {
   aniSpeedFaster: 0.3,
   aniSpeedFastest: 0.15,
 };
+
+const colors = {
+  white: '#fff',
+  red: [
+    '#fff5f5',
+    '#ffe3e3',
+    '#ffc9c9',
+    '#ffa8a8',
+    '#ff8787',
+    '#ff6b6b',
+    '#fa5252',
+    '#f03e3e',
+    '#e03131',
+    '#c92a2a',
+  ],
+  pink: [
+    '#fff0f6',
+    '#ffdeeb',
+    '#fcc2d7',
+    '#faa2c1',
+    '#f783ac',
+    '#f06595',
+    '#e64980',
+    '#d6336c',
+    '#c2255c',
+    '#a61e4d',
+  ],
+  grape: [
+    '#f8f0fc',
+    '#f3d9fa',
+    '#eebefa',
+    '#e599f7',
+    '#da77f2',
+    '#cc5de8',
+    '#be4bdb',
+    '#ae3ec9',
+    '#9c36b5',
+    '#862e9c',
+  ],
+  yellow: [
+    '#fff9db',
+    '#fff3bf',
+    '#ffec99',
+    '#ffe066',
+    '#ffd43b',
+    '#fcc419',
+    '#fab005',
+    '#f59f00',
+    '#f08c00',
+    '#e67700',
+  ],
+  blue: [
+    '#e7f5ff',
+    '#d0ebff',
+    '#a5d8ff',
+    '#74c0fc',
+    '#4dabf7',
+    '#339af0',
+    '#228be6',
+    '#1c7ed6',
+    '#1971c2',
+    '#1864ab',
+  ],
+  orange: [
+    '#fff4e6',
+    '#ffe8cc',
+    '#ffd8a8',
+    '#ffc078',
+    '#ffa94d',
+    '#ff922b',
+    '#fd7e14',
+    '#f76707',
+    '#e8590c',
+    '#d9480f',
+  ],
+  lime: [
+    '#f4fce3',
+    '#e9fac8',
+    '#d8f5a2',
+    '#c0eb75',
+    '#a9e34b',
+    '#94d82d',
+    '#82c91e',
+    '#74b816',
+    '#66a80f',
+    '#5c940d',
+  ],
+  green: [
+    '#ebfbee',
+    '#d3f9d8',
+    '#b2f2bb',
+    '#8ce99a',
+    '#69db7c',
+    '#51cf66',
+    '#40c057',
+    '#37b24d',
+    '#2f9e44',
+    '#2b8a3e',
+  ],
+  gray: [
+    '#f8f9fa',
+    '#f1f3f5',
+    '#e9ecef',
+    '#dee2e6',
+    '#ced4da',
+    '#adb5bd',
+    '#868e96',
+    '#495057',
+    '#343a40',
+    '#212529',
+  ],
+  lightBlack: '#161617',
+  black: '#00000',
+};
 const themeLight = {
-  background: '#161617',
-  body: '#fff',
+  background: colors.lightBlack,
+  body: '#fafafa',
   colors: {
-    success: 'green',
-    error: staticTheme.baseColors.error,
-    white: '#fff',
-    grey: '#ccc',
+    success: colors.green[7],
+    error: colors.pink[9],
+    white: colors.white,
+    grey: colors.gray[3],
     active: '#FF8C00',
     black: '#161617',
-    gray: '#F8F8F9',
+    gray: colors.gray[8],
+    'light-gray': colors.gray[3],
+    'lighter-gray': colors.gray[2],
+    'lightest-gray': colors.gray[1],
     secondary: 'red',
-    primary: 'blue',
+    primary: colors.grape[8],
+    'light-primary': colors.grape[7],
+    'lighter-primary': colors.grape[1],
+    'lightest-primary': colors.grape[0],
+    btn: {
+      disableGray: colors.gray[3],
+      disabledGrayFont: colors.gray[5],
+    },
   },
   fontColor: {
     primary: '#161617',
@@ -117,17 +168,28 @@ const themeLight = {
 };
 
 const themeDark = {
-  background: '#fff',
-  body: '#161617',
+  background: colors.white,
+  body: colors.lightBlack,
   colors: {
     success: 'green',
-    error: staticTheme.baseColors.error,
-    white: '#fff',
+    error: colors.pink[9],
+    white: colors.white,
     grey: '#ccc',
+
     active: '#FF8C00',
-    black: '#161617',
-    gray: '#F8F8F9',
-    primary: 'red',
+    black: colors.lightBlack,
+    gray: colors.gray[8],
+    'light-gray': colors.gray[3],
+    'lighter-gray': colors.gray[2],
+    'lightest-gray': colors.gray[1],
+    primary: colors.orange[5],
+    'light-primary': colors.orange[4],
+    'lightest-primary': colors.orange[0],
+    'lighter-primary': colors.orange[1],
+    btn: {
+      disableGray: colors.gray[3],
+      disabledGrayFont: colors.gray[5],
+    },
     secondary: 'blue',
   },
   fontColor: {

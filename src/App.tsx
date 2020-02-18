@@ -32,18 +32,19 @@ const App = () => {
     <ThemeProvider theme={themeMode}>
       <GlobalStyles />
       <Container color="primary">
-        <NewButton>Styled System Button!</NewButton> <br />
+        <NewButton disabled>Styled System Button!</NewButton>
+        <br />
         <NewButton mt={3} variant="primary">
           primary
         </NewButton>
-        <NewButton mt={3} variant="secondary">
+        <NewButton disabled mt={3} variant="secondary">
           secondary
         </NewButton>
-        <NewButton mt={3} size="large" variant="tertiary">
+        <NewButton mt={3} disabled variant="tertiary">
           tertiary
         </NewButton>
         <NewButton mt={3} size="large" variant="danger">
-          Styled System Button!
+          Large Button
         </NewButton>
         <Form defaultValues={{ sex: 'female' }} schema={sampleSchema}>
           <Input name="firstName" label="First Name" />
@@ -75,15 +76,19 @@ const App = () => {
           />
           <Button type={'submit'}>Submit</Button>
           <NewButton mt={3} variant="primary" type="submit">
-            primary
+            Submit
           </NewButton>
         </Form>
         <Button onClick={() => toggleTheme()}>
           {theme === 'light' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
         </Button>
         <ButtonGroup>
-          <Button>Button</Button>
-          <Button>Button</Button>
+          <Button disabled size={'big'}>
+            Button
+          </Button>
+          <Button disabled theme="tertiary">
+            Button
+          </Button>
           <Icon icon={'heart'} color={'darkOrange'} />
         </ButtonGroup>
       </Container>

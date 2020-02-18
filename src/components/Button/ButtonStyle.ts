@@ -24,6 +24,25 @@ const style = css`
     margin-right: 1em;
   }
 `;
+const iconOnlyStyle = css`
+  padding: 0;
+  border-radius: 50%;
+  svg {
+    margin: 0;
+  }
+`;
+
+const iconOnlySizes = {
+  small: css`
+    width: 1.75rem;
+  `,
+  medium: css`
+    width: 2.5rem;
+  `,
+  big: css`
+    width: 3rem;
+  `,
+};
 
 const themes = {
   primary: css`
@@ -97,26 +116,6 @@ const sizes = {
     height: 3rem;
     font-size: 1.125rem;
     padding: 0 1.5rem;
-  `,
-};
-
-const iconOnlyStyle = css`
-  padding: 0;
-  border-radius: 50%;
-  svg {
-    margin: 0;
-  }
-`;
-
-const iconOnlySizes = {
-  small: css`
-    width: 1.75rem;
-  `,
-  medium: css`
-    width: 2.5rem;
-  `,
-  big: css`
-    width: 3rem;
   `,
 };
 
